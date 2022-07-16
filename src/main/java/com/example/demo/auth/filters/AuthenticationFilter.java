@@ -24,21 +24,31 @@ public class AuthenticationFilter extends GenericFilterBean {
     FilterChain filterChain
   )
     throws IOException, ServletException {
+    System.out.println("Invoke ***AuthenticationFilter*** -> doFilter");
+
     HttpServletRequest req = (HttpServletRequest) request;
     HttpSession session = req.getSession();
 
     User user = (User) session.getAttribute(UserSessionKey);
 
     if (user != null) {
-      UsernamePasswordAuthenticationToken authUser = new UsernamePasswordAuthenticationToken(
+      System.out.println(
+        "Invoke ***AuthenticationFilter*** -> user is not null"
+      );
+
+      UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
         user,
         user.getPassword(),
         user.getAuthorities()
       );
 
-      SecurityContextHolder.getContext().setAuthentication(authUser);
+      System.out.println(
+        "Invoke ***AuthenticationFilter*** -> put authToken in securityContext"
+      );
+      SecurityContextHolder.getContext().setAuthentication(authToken);
     }
 
+    // Either securityContext has authToken or not, we continue the filter chain
     filterChain.doFilter(request, response);
   }
 }

@@ -58,11 +58,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       .antMatchers(MANAGER_ONLY_ENDPOINT)
       .hasRole(MANAGER.name())
       .and()
-      .addFilterBefore( // login
+      .addFilterBefore( // Login
         new LoginFilter(LOGIN_ENDPOINT, authenticationManager()),
         UsernamePasswordAuthenticationFilter.class
       )
-      .addFilterBefore( // logout
+      .addFilterBefore( // Logout
         new LogoutFilter(LOGOUT_ENDPOINT),
         UsernamePasswordAuthenticationFilter.class
       )

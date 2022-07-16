@@ -29,6 +29,8 @@ public class LoginFilter extends AbstractAuthenticationProcessingFilter {
     HttpServletResponse res
   )
     throws AuthenticationException, IOException {
+    System.out.println("Invoke ***LoginFilter*** -> attemptAuthentication");
+
     LoginUserDto loginUserDto = new ObjectMapper()
     .readValue(req.getInputStream(), LoginUserDto.class);
 
@@ -49,11 +51,26 @@ public class LoginFilter extends AbstractAuthenticationProcessingFilter {
     Authentication auth
   )
     throws IOException, ServletException {
+    System.out.println("Invoke ***LoginFilter*** -> successfulAuthentication");
+
     User user = (User) auth.getPrincipal();
-    System.out.println(user);
 
     req.getSession().setAttribute(UserSessionKey, user);
 
     res.getOutputStream().print("You are logged in as " + user.getUsername());
+  }
+
+  @Override
+  protected void unsuccessfulAuthentication(
+    HttpServletRequest request,
+    HttpServletResponse response,
+    AuthenticationException failed
+  )
+    throws IOException, ServletException {
+    System.out.println( "Invoke ***LoginFilter*** -> unsuccessfulAuthentication");
+
+    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+    response.setContentType("text/plain");
+    response.getOutputStream().print(failed.getMessage());
   }
 }

@@ -19,6 +19,8 @@ public class LogoutFilter extends AbstractAuthenticationProcessingFilter {
     HttpServletResponse res
   )
     throws AuthenticationException, IOException {
+    System.out.println("Invoke ***LogoutFilter***");
+
     req.getSession().invalidate();
     res.getWriter().println("You logged out!");
 
