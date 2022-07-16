@@ -2,11 +2,11 @@
 
 ### Watch in action:
 
-1). Run the app;
+1). `Run` the app;
 
 2). `Swagger UI automatically starts up`, please check your default browser!
 
-3). Login as "intern" or "manager" in swagger UI:
+3). `Login` as "intern" or "manager" in swagger UI:
 
       {
          "username": "intern",
@@ -18,7 +18,7 @@
          "password": "manager"
       }
 
-4.  Test different endpoint as you wish :)
+4.  `Test` different endpoint as you wish :)
 
 ### Default settings:
 
