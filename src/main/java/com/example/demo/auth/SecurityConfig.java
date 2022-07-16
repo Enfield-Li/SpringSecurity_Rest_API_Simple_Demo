@@ -51,13 +51,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       .authorizeRequests()
       .antMatchers("/", SWAGGER_UI_ENDPOINT_1, SWAGGER_UI_ENDPOINT_2) // Allow swagger endpoint
       .permitAll()
+
+      /*
+       * Authorization
+       */
+      // Permission-based auth
       .antMatchers(READ_ENDPOINT)
       .hasAuthority(READ_PERMISSION.getPermission())
       .antMatchers(WRITE_ENDPOINT)
       .hasAuthority(WRITE_PERMISSION.getPermission())
+
+      // Role-based auth
       .antMatchers(MANAGER_ONLY_ENDPOINT)
       .hasRole(MANAGER.name())
       .and()
+
+      /*
+       * Authentication
+       */
       .addFilterBefore( // Login
         new LoginFilter(LOGIN_ENDPOINT, authenticationManager()),
         UsernamePasswordAuthenticationFilter.class
@@ -70,7 +81,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         new AuthenticationFilter(),
         UsernamePasswordAuthenticationFilter.class
       );
-
+      
     // Prevent anonymousUser access
     // http.authorizeRequests().anyRequest().authenticated();
   }
