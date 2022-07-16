@@ -64,6 +64,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       // Role-based auth
       .antMatchers(MANAGER_ONLY_ENDPOINT)
       .hasRole(MANAGER.name())
+      .antMatchers(GET_AUTH_INFO_ENDPOINT)
+      .authenticated()
       .and()
 
       /*

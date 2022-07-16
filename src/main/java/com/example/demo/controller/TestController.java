@@ -15,7 +15,7 @@ class TestController {
 
   @GetMapping("access_by_all")
   public String accessByAll() {
-    return "Anyone can access this, don't be suprised lol";
+    return "Anyone can access this!";
   }
 
   @GetMapping(READ)

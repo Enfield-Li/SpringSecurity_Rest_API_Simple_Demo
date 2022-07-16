@@ -8,10 +8,14 @@ public class Constants {
   public static final String LOGIN = "/login";
   public static final String LOGOUT = "/logout";
 
-  public static final String API_ENDPOINT = "/api/v1/app";
+  public static final String API_ENDPOINT = "/api/v1/auth";
 
   public static final String LOGIN_ENDPOINT = API_ENDPOINT + LOGIN;
   public static final String LOGOUT_ENDPOINT = API_ENDPOINT + LOGOUT;
+
+  public static final String GET_AUTH_INFO = "/get_auth_info";
+  public static final String GET_AUTH_INFO_ENDPOINT =
+    API_ENDPOINT + GET_AUTH_INFO;
 
   /*
    * Test api endpoint

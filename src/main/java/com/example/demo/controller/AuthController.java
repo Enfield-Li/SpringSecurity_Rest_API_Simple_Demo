@@ -17,19 +17,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(API_ENDPOINT)
 class AuthController {
 
-  @PostMapping(LOGOUT) // For exposing api to swagger UI
+  @PostMapping(LOGOUT) // For exposing endpoint to swagger UI
   public void logout() {}
 
-  @PostMapping(LOGIN) // For exposing api to swagger UI
+  @PostMapping(LOGIN) // For exposing endpoint to swagger UI
   public void login(@RequestBody LoginUserDto dto) {}
 
-  @GetMapping("get_login_info")
-  public String getLoginInfo() {
+  @GetMapping(GET_AUTH_INFO)
+  public String getAuthInfo() {
     User user = (User) SecurityContextHolder
       .getContext()
       .getAuthentication()
       .getPrincipal();
 
-    return "Log in info: " + user.toString();
+    return "Auth info: " + user.toString();
   }
 }
