@@ -4,7 +4,7 @@
 
 1). `Run` the app;
 
-2). `Swagger UI automatically starts up`, please check your default browser!
+2). `Swagger UI automatically starts up` in port 8000, please check your default browser!
 
 3). `Login` as "intern" or "manager" in swagger UI:
 
@@ -20,13 +20,13 @@
 
 4.  `Test` different endpoint as you wish :)
 
-### Default settings:
+### Some basics:
 
-1). Roles:
+1). `Roles` settings:
 
       Intern and Manager.
 
-2). Permissions:
+2). `Permissions` settings:
 
       a. Intern have access to "read" operation;
       b. Manager have access to both "read" and "write" operations;
