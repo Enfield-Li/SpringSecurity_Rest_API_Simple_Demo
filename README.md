@@ -4,7 +4,7 @@
 
 1). `Run` the app;
 
-2). `Swagger UI automatically starts up` in port 8000, please check your default browser!
+2). `Swagger UI automatically starts up` at port 8000, please check your default browser!
 
 3). `Login` as "intern" or "manager" in swagger UI:
 
@@ -18,7 +18,7 @@
          "password": "manager"
       }
 
-4.  `Test` different endpoint as you wish :)
+4.  `Test` different endpoint as you wish 😃
 
 ### Some basics:
 
