@@ -19,14 +19,14 @@ public class UserDaoService implements UserDao {
   }
 
   @Override
-  public Optional<User> selectApplicationUserByUsername(String username) {
-    return getApplicationUsers()
+  public Optional<User> selectUserByUsername(String username) {
+    return getAllUsers()
       .stream()
       .filter(applicationUser -> username.equals(applicationUser.getUsername()))
       .findFirst();
   }
 
-  private List<User> getApplicationUsers() {
+  private List<User> getAllUsers() {
     List<User> applicationUsers = Lists.newArrayList(
       new User(
         "intern",

@@ -20,7 +20,7 @@ public class UserService implements UserDetailsService {
     System.out.println("Invoke ***UserService*** -> loadUserByUsername");
 
     return userDao
-      .selectApplicationUserByUsername(username)
+      .selectUserByUsername(username)
       .orElseThrow(
         () ->
           new UsernameNotFoundException(
