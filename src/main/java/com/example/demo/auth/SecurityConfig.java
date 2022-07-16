@@ -72,7 +72,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       );
 
     // Prevent anonymousUser access
-    http.authorizeRequests().anyRequest().authenticated();
+    // http.authorizeRequests().anyRequest().authenticated();
   }
 
   @Override

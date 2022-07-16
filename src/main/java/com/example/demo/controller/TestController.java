@@ -13,6 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(TEST_ENDPOINT)
 class TestController {
 
+  @GetMapping("access_by_all")
+  public String accessByAll() {
+    return "Anyone can access this, don't be suprised lol";
+  }
+
   @GetMapping(READ)
   public String read() {
     return "I can do READ operations, using http GET request!";
