@@ -19,8 +19,7 @@ import org.springframework.security.web.authentication.AbstractAuthenticationPro
 public class LoginFilter extends AbstractAuthenticationProcessingFilter {
 
   public LoginFilter(String url, AuthenticationManager authManager) {
-    super(url);
-    setAuthenticationManager(authManager);
+    super(url, authManager);
   }
 
   @Override

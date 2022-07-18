@@ -31,9 +31,7 @@ public class AuthenticationFilter extends GenericFilterBean {
     User user = (User) session.getAttribute(UserSessionKey);
 
     if (user != null) {
-      System.out.println(
-        "Invoke ***AuthenticationFilter*** -> user is not null"
-      );
+      System.out.println( "Invoke ***AuthenticationFilter*** -> user is not null");
 
       UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
         user,
@@ -41,9 +39,7 @@ public class AuthenticationFilter extends GenericFilterBean {
         user.getAuthorities()
       );
 
-      System.out.println(
-        "Invoke ***AuthenticationFilter*** -> put authToken in securityContext"
-      );
+      System.out.println( "Invoke ***AuthenticationFilter*** -> put authToken in securityContext");
       SecurityContextHolder.getContext().setAuthentication(authToken);
     }
 

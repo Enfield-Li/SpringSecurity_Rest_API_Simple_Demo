@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Tag(name = "Auth")
-@RequestMapping(API_ENDPOINT)
+@RequestMapping(AUTH_ENDPOINT)
 class AuthController {
 
   @PostMapping(LOGOUT) // For exposing endpoint to swagger UI
@@ -30,6 +30,6 @@ class AuthController {
       .getAuthentication()
       .getPrincipal();
 
-    return "Auth info: " + user.toString();
+    return "Auth info from securityContext: " + user.toString();
   }
 }

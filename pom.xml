@@ -16,6 +16,7 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+		<!-- Before using dev tool, be sure to comment out openSwaggerUI() in main function -->
 		<!-- <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -39,11 +40,6 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>31.1-jre</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

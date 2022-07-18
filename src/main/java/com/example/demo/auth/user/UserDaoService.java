@@ -3,7 +3,6 @@ package com.example.demo.auth.user;
 import static com.example.demo.auth.user.UserRole.INTERN;
 import static com.example.demo.auth.user.UserRole.MANAGER;
 
-import com.google.common.collect.Lists;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -22,12 +21,12 @@ public class UserDaoService implements UserDao {
   public Optional<User> selectUserByUsername(String username) {
     return getAllUsers()
       .stream()
-      .filter(applicationUser -> username.equals(applicationUser.getUsername()))
+      .filter(user -> username.equals(user.getUsername()))
       .findFirst();
   }
 
   private List<User> getAllUsers() {
-    List<User> applicationUsers = Lists.newArrayList(
+    List<User> allUsers = List.of(
       new User(
         "intern",
         passwordEncoder.encode("intern"),
@@ -40,6 +39,6 @@ public class UserDaoService implements UserDao {
       )
     );
 
-    return applicationUsers;
+    return allUsers;
   }
 }

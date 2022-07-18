@@ -3,22 +3,22 @@ package com.example.demo.util;
 public class Constants {
 
   /*
-   * Auth api endpoint
+   * Auth endpoint
    */
   public static final String LOGIN = "/login";
   public static final String LOGOUT = "/logout";
 
-  public static final String API_ENDPOINT = "/api/v1/auth";
+  public static final String AUTH_ENDPOINT = "/api/v1/auth";
 
-  public static final String LOGIN_ENDPOINT = API_ENDPOINT + LOGIN;
-  public static final String LOGOUT_ENDPOINT = API_ENDPOINT + LOGOUT;
+  public static final String LOGIN_ENDPOINT = AUTH_ENDPOINT + LOGIN;
+  public static final String LOGOUT_ENDPOINT = AUTH_ENDPOINT + LOGOUT;
 
   public static final String GET_AUTH_INFO = "/get_auth_info";
   public static final String GET_AUTH_INFO_ENDPOINT =
-    API_ENDPOINT + GET_AUTH_INFO;
+    AUTH_ENDPOINT + GET_AUTH_INFO;
 
   /*
-   * Test api endpoint
+   * Test endpoint
    */
   public static final String READ = "/read";
   public static final String WRITE = "/write";
@@ -35,7 +35,7 @@ public class Constants {
   /*
    * Addtional constant
    */
+  public static final String UserSessionKey = "user_in_session_key";
   public static final String SWAGGER_UI_ENDPOINT_1 = "/swagger-ui/**";
   public static final String SWAGGER_UI_ENDPOINT_2 = "/v3/api-docs/**";
-  public static final String UserSessionKey = "user_in_session_key";
 }
